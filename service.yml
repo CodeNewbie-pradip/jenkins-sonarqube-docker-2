@@ -4,8 +4,9 @@ metadata:
   name: chain-app
 spec:
   selector:
-    app.kubernetes.io/name: chain-app
+    app: chain-app  # <-- must match pod label
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: NodePort  # <-- needed for Kind access
